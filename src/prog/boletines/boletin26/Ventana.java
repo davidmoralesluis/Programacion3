@@ -79,7 +79,7 @@ public class Ventana implements ActionListener{
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource()==boton1){
-            textArea.setText("Hola "+textField1.getText()+" !!");
+            textArea.setText("Ich liebe "+textField1.getText()+"<3 !!");
         }
 
         if (e.getSource()==boton2){
