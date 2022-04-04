@@ -90,9 +90,6 @@ public class Ventana extends MouseAdapter {
         boton1.addMouseListener(this);
         boton2.addMouseListener(this);
         boton3.addMouseListener(this);
-
-
-
     }
 
     public void mousePressed(MouseEvent ev) {
