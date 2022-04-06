@@ -70,6 +70,7 @@ public class Boletin29 implements ActionListener {
         modelo.addColumn("Curso");
         modelo.setColumnIdentifiers(columnas);
 
+
         name = new JLabel("         Nombre");
         name.setBounds(50,220,160,30);
         name.setBackground(new Color(133, 133, 133));
