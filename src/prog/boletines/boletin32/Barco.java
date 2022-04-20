@@ -9,8 +9,4 @@ public abstract class Barco {
           this.matricula = matricula;
           this.eslora = eslora;
      }
-
-     public float calcularPrecio(int dias){
-          return 0;
-     }
 }

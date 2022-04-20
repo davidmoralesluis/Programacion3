@@ -7,9 +7,9 @@ public class Main {
 
         ArrayList<Barco> RentBoat=new ArrayList<>();
 
-        Barco Laura = new Velero("lauraEs",15,5);
-        Barco Luis = new Deportivo("deporNO",5,1000);
-        Barco Nina = new Yate("Yatevale",7,500,3);
+        Velero Laura = new Velero("lauraEs",15,5);
+        Deportivo Luis = new Deportivo("deporNO",5,1000);
+        Yate Nina = new Yate("Yatevale",7,500,3);
 
         RentBoat.add(Laura);
         RentBoat.add(Luis);
