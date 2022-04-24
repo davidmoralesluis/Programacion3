@@ -19,6 +19,8 @@ public class Boletin30 implements ActionListener {
     boolean isOP=false;
 
     double num;
+    double op1;
+    double op2;
     String operacion;
     String textoDisplay;
 
@@ -32,12 +34,12 @@ public class Boletin30 implements ActionListener {
         calculadora.getContentPane().setBackground(new Color(100,100,100));
         calculadora.setLayout(null);
 
-        display = new JLabel("- - -");
+        display = new JLabel("< La Calculadora >");
         display.setBounds(20,20,250,50);
         display.setBackground(new Color(255,255,255));
         display.setOpaque(true);
-        display.setFont(new Font("Dialog", Font.BOLD, 24));
-        display.setHorizontalAlignment(SwingConstants.RIGHT);
+        display.setFont(new Font("Dialog", Font.ITALIC, 20));
+        display.setHorizontalAlignment(SwingConstants.CENTER);
 
         teclado = new JPanel();
         teclado.setBounds(20,100,250,290);
@@ -46,16 +48,19 @@ public class Boletin30 implements ActionListener {
 
         tecAC = new JButton("AC");
         tecAC.setBounds(50,5,70,20);
-        tecAC.setBackground(Color.red);
-        tecAC.setForeground(new Color(255,255,255));
-        tecAC.setFont(new Font("Dialog", Font.BOLD, 8));
+        tecAC.setBackground(new Color(7, 51, 201));
+        tecAC.setForeground(new Color(7, 51, 201));
+        //tecAC.setForeground(new Color(255,255,255));
+        tecAC.setFont(new Font("Dialog", Font.BOLD, 12));
         teclado.add(tecAC);
 
         tecOff = new JButton("OFF");
         tecOff.setBounds(130,5,70,20);
-        tecOff.setBackground(Color.blue);
-        tecOff.setForeground(new Color(255,255,255));
-        tecOff.setFont(new Font("Dialog", Font.BOLD, 8));
+        tecOff.setBackground(new Color(178, 5, 39));
+        tecOff.setForeground(new Color(178, 5, 39));
+        //tecOff.setOpaque(true);
+        //tecOff.setForeground(new Color(255,255,255));
+        tecOff.setFont(new Font("Dialog", Font.BOLD, 12));
         teclado.add(tecOff);
 
         tec7 = new JButton("7");
@@ -170,8 +175,6 @@ public class Boletin30 implements ActionListener {
         tecMas.setFont(new Font("Dialog", Font.ITALIC, 19));
         teclado.add(tecMas);
 
-
-
         calculadora.add(display);
         calculadora.add(teclado);
         calculadora.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Cierra Aplicacion cuando X;
@@ -184,6 +187,8 @@ public class Boletin30 implements ActionListener {
     public void onOff(boolean state){
 
         if (state) {
+            display.setFont(new Font("Dialog", Font.BOLD, 24));
+            display.setHorizontalAlignment(SwingConstants.RIGHT);
             tecOff.addActionListener(this);
             tecDiv.addActionListener(this);
             tecMul.addActionListener(this);
@@ -202,6 +207,7 @@ public class Boletin30 implements ActionListener {
             tec8.addActionListener(this);
             tec9.addActionListener(this);
         }else {
+            display.setText("off");
             tecOff.removeActionListener(this);
             tecDiv.removeActionListener(this);
             tecMul.removeActionListener(this);
@@ -222,6 +228,28 @@ public class Boletin30 implements ActionListener {
         }
     }
 
+    public void result(){
+        textoDisplay=display.getText();
+        isOP=false;
+        textoOperacion=textoDisplay.split(" ");
+        operacion=textoOperacion[1];
+        op1=Double.parseDouble(textoOperacion[0]);
+        op2=Double.parseDouble(textoOperacion[2]);
+        if(operacion.equalsIgnoreCase("+")){
+            display.setText(op1+op2+"");
+        }
+        if(operacion.equalsIgnoreCase("-")){
+            display.setText(op1-op2+"");
+        }
+        if(operacion.equalsIgnoreCase("*")){
+            display.setText(op1*op2+"");
+        }
+        if(operacion.equalsIgnoreCase("/")){
+            display.setText(op1/op2+"");
+        }
+        textoDisplay="";
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         Object t=e.getSource();
@@ -239,12 +267,39 @@ public class Boletin30 implements ActionListener {
         }
 
         if (t==tecMas){
+            if (isOP) {
+                result();
+            }
             display.setText(display.getText()+" + ");
-
-            textoDisplay=display.getText();
-
             isOP=true;
-            textoOperacion=textoDisplay.split(" ");
+        }
+
+        if (t==tecMin){
+            if (isOP) {
+                result();
+            }
+            display.setText(display.getText()+" - ");
+            isOP=true;
+        }
+
+        if (t==tecMul){
+            if (isOP) {
+                result();
+            }
+            display.setText(display.getText()+" * ");
+            isOP=true;
+        }
+
+        if (t==tecDiv){
+            if (isOP) {
+                result();
+            }
+            display.setText(display.getText()+" / ");
+            isOP=true;
+        }
+
+        if (t==tecIgual){
+            result();
         }
 
         if (t==tec1){
@@ -253,6 +308,96 @@ public class Boletin30 implements ActionListener {
             }else{
                 display.setText("");
                 display.setText(display.getText()+"1");
+
+            }
+        }
+
+        if (t==tec2){
+            if(isOP){
+                display.setText(display.getText()+"2");
+            }else{
+                display.setText("");
+                display.setText(display.getText()+"2");
+
+            }
+        }
+
+        if (t==tec3){
+            if(isOP){
+                display.setText(display.getText()+"3");
+            }else{
+                display.setText("");
+                display.setText(display.getText()+"3");
+
+            }
+        }
+
+        if (t==tec4){
+            if(isOP){
+                display.setText(display.getText()+"4");
+            }else{
+                display.setText("");
+                display.setText(display.getText()+"4");
+
+            }
+        }
+
+        if (t==tec5){
+            if(isOP){
+                display.setText(display.getText()+"5");
+            }else{
+                display.setText("");
+                display.setText(display.getText()+"5");
+
+            }
+        }
+
+        if (t==tec6){
+            if(isOP){
+                display.setText(display.getText()+"6");
+            }else{
+                display.setText("");
+                display.setText(display.getText()+"6");
+
+            }
+        }
+
+        if (t==tec7){
+            if(isOP){
+                display.setText(display.getText()+"7");
+            }else{
+                display.setText("");
+                display.setText(display.getText()+"7");
+
+            }
+        }
+
+        if (t==tec8){
+            if(isOP){
+                display.setText(display.getText()+"8");
+            }else{
+                display.setText("");
+                display.setText(display.getText()+"8");
+
+            }
+        }
+
+        if (t==tec9){
+            if(isOP){
+                display.setText(display.getText()+"9");
+            }else{
+                display.setText("");
+                display.setText(display.getText()+"9");
+
+            }
+        }
+
+        if (t==tec0){
+            if(isOP){
+                display.setText(display.getText()+"0");
+            }else{
+                display.setText("");
+                display.setText(display.getText()+"0");
 
             }
         }
