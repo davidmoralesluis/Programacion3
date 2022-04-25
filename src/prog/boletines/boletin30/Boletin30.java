@@ -49,17 +49,17 @@ public class Boletin30 implements ActionListener {
         tecAC = new JButton("AC");
         tecAC.setBounds(50,5,70,20);
         tecAC.setBackground(new Color(7, 51, 201));
-        tecAC.setForeground(new Color(7, 51, 201));
-        //tecAC.setForeground(new Color(255,255,255));
+        //tecAC.setForeground(new Color(7, 51, 201));
+        tecAC.setForeground(new Color(255,255,255));
         tecAC.setFont(new Font("Dialog", Font.BOLD, 12));
         teclado.add(tecAC);
 
         tecOff = new JButton("OFF");
         tecOff.setBounds(130,5,70,20);
         tecOff.setBackground(new Color(178, 5, 39));
-        tecOff.setForeground(new Color(178, 5, 39));
+        //tecOff.setForeground(new Color(178, 5, 39));
         //tecOff.setOpaque(true);
-        //tecOff.setForeground(new Color(255,255,255));
+        tecOff.setForeground(new Color(255,255,255));
         tecOff.setFont(new Font("Dialog", Font.BOLD, 12));
         teclado.add(tecOff);
 

@@ -12,6 +12,6 @@ public class Yate extends Barco{
     }
 
     public float calcularPrecio(int dias){
-        return ((2*this.potencia)*(25*camarote)*dias);
+        return (((2*this.potencia)+(10*eslora)+(25*camarote))*dias);
     }
 }

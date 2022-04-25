@@ -9,7 +9,8 @@ public class Deportivo extends Barco{
         this.potencia = potencia;
     }
 
+
     public float calcularPrecio(int dias){
-        return ((2*this.potencia)*dias);
+        return ((2*this.potencia+(10*eslora))*dias);
     }
 }

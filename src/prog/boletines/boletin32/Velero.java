@@ -11,6 +11,6 @@ public class Velero extends Barco{
     }
 
     public float calcularPrecio(int dias){
-        return ((8*this.nMastiles)+(10*this.eslora)*dias);
+        return (((8*this.nMastiles)+(10*this.eslora))*dias);
     }
 }
