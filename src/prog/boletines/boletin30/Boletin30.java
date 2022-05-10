@@ -303,13 +303,13 @@ public class Boletin30 implements ActionListener {
         }
 
         if (t==tec1){
-            if(isOP){
-                display.setText(display.getText()+"1");
-            }else{
+            if(display.getText()=="0"){
                 display.setText("");
-                display.setText(display.getText()+"1");
-
             }
+
+            display.setText(display.getText()+"1");
+
+
         }
 
         if (t==tec2){
@@ -400,6 +400,10 @@ public class Boletin30 implements ActionListener {
                 display.setText(display.getText()+"0");
 
             }
+        }
+
+        if (t==tecPoint){
+            display.setText(display.getText()+".");
         }
 
 

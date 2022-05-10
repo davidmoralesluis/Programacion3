@@ -23,6 +23,12 @@ public class Revista extends Publicacion{
 
     @Override
     public String toString() {
-        return "Revista{" + "tematica='" + tematica + '\'' + '}';
+
+        return super.toString()+ "tematica='" + tematica + '\'' + '}';
+    }
+
+    @Override
+    public void nomear() {
+        System.out.println(" son unha revista!");
     }
 }

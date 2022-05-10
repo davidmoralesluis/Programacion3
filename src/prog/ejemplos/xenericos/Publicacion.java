@@ -1,6 +1,6 @@
 package prog.ejemplos.xenericos;
 
-public class Publicacion{
+public abstract class Publicacion{
 
     private String nome;
     private float precio;
@@ -31,6 +31,8 @@ public class Publicacion{
 
     @Override
     public String toString() {
-        return "Publicacion{" + "nome='" + nome + '\'' + ", precio=" + precio + '}';
+        return "{ nome='" + nome + '\'' + ", precio=" + precio+"€, ";
     }
+
+    public abstract void nomear();
 }

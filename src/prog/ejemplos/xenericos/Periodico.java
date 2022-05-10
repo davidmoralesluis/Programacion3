@@ -6,10 +6,12 @@ public class Periodico extends Publicacion{
 
     public Periodico(int numPaxinas) {
         this.numPaxinas = numPaxinas;
+
     }
 
     public Periodico(String nome, float precio, int numPaxinas) {
         super(nome, precio);
+
         this.numPaxinas = numPaxinas;
     }
 
@@ -23,6 +25,11 @@ public class Periodico extends Publicacion{
 
     @Override
     public String toString() {
-        return "Periodico{" + "numPaxinas=" + numPaxinas + '}';
+        return super.toString() + "numPaxinas=" + numPaxinas + '}';
+    }
+
+    @Override
+    public void nomear() {
+        System.out.println(" son un Periodico!");
     }
 }
